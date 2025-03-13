@@ -40,13 +40,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // add user to database
-    public void addUser(String email, String password){
+    public long addUser(String email, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_EMAIL, email);
         values.put(COLUMN_PASSWORD, password);
-        db.insert(TABLE_USERS, null, values);
+        long id = db.insert(TABLE_USERS, null, values);
         db.close();
+        return id;
     }
 
     // get all users from database
@@ -64,4 +65,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return users;
     }
+
 }

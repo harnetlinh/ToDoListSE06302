@@ -38,4 +38,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register" />
+
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#C10F0F"
+        android:textSize="34sp"
+        tools:visibility="invisible" />
 </LinearLayout>
